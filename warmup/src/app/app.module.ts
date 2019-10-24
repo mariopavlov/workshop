@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
@@ -31,7 +31,7 @@ import { WizardProfileComponent } from './plugins/wizard-profile.component';
         NativeScriptModule,
         AppRoutingModule,
 
-        // NativeScriptFormsModule,
+        NativeScriptFormsModule,
         NativeScriptHttpClientModule,
 
         NativeScriptUIDataFormModule

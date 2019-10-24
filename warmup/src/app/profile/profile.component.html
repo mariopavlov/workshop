@@ -2,15 +2,29 @@
 </ActionBar>
 
 <TabView selectedIndex="0" >
-  <StackLayout *tabItem="{title:'UI Components'}" class="form m-l-5">
-    <Label text="Add your code here" class="text-primary"></Label>
+  <StackLayout *tabItem="{title:'UI Components'}" class="form m-l-5" (longPress)="clearForm()">
+
+    <Label text="name" textWrap="true"></Label>
+    <TextField hint="your name here" [(ngModel)]="profile.name"></TextField>
+
+    <Label text="Password" textWrap="true"></Label>
+    <TextField hint="Enter your password here" [(ngModel)]="profile.password" secure="true"></TextField>
+
+    <Label text="Angular Pro:"></Label>
+    <Switch checked="false" (checkedChange)="onCheckedChange($event)" class="m-15" row="1" col="1"></Switch>
+    
+    <DatePicker [day]="2" [month]="2" [year]="2002"></DatePicker>
+    <Slider [minValue]="0" [maxValue]="10" [value]="3"></Slider>
+    <Button text="Do Something" (tap)="clear()"></Button>
+
+    
   </StackLayout>
 
   <GridLayout *tabItem="{title:'DataForm'}" rows="*, auto, auto">
     <!-- https://docs.nativescript.org/angular/ui/rich-components#dataform -->
     <!-- http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/DataForm/dataform-overview -->
     <RadDataForm [source]="profile" row="0">
-
+      
     </RadDataForm>
 
     <Button text="Save" (tap)="save()" class="btn btn-primary" row="1"></Button>
